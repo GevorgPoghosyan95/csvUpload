@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CsvImport;
+use App\Jobs\UploadCsv;
 use Illuminate\Http\Request;
-use App\Doc;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\File;
@@ -21,11 +21,8 @@ class UploadFileController extends Controller
         $file = $request['file'];
         $name = $file->getClientOriginalName();
         Storage::disk('upload_files')->put($name, File::get($file));
-        $path = storage_path('app/public/upload_files/' . $name);
-        $rows = Excel::toCollection(new CsvImport(), $path)[0];
-        $import = new CsvImport();
-        $result = $import->collection($rows);
-        return $result;
+        UploadCsv::dispatch($name);
+        return 'ok';
 
     }
 }

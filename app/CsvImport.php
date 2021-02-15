@@ -2,9 +2,9 @@
 
 namespace App;
 
+use App\Jobs\UploadCsv;
 use GuzzleHttp\Client;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 
@@ -18,7 +18,8 @@ class CsvImport implements ToCollection
     public function collection(Collection $rows)
     {
         foreach ($rows as $row) {
-            dd($row);
+            Doc::create(['title'=>$row]);
         }
+        return 'success';
     }
 }

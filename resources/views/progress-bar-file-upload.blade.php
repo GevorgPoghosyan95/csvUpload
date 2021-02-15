@@ -41,33 +41,33 @@
 </div>
 
 
-<script type="text/javascript">
+{{--<script type="text/javascript">--}}
 
-    var SITEURL = "{{URL('/')}}";
+{{--    var SITEURL = "{{URL('/')}}";--}}
 
-    $(function() {
-        $(document).ready(function()
-        {
-            var bar = $('.bar');
-            var percent = $('.percent');
+{{--    $(function() {--}}
+{{--        $(document).ready(function()--}}
+{{--        {--}}
+{{--            var bar = $('.bar');--}}
+{{--            var percent = $('.percent');--}}
 
-            $('form').ajaxForm({
-                beforeSend: function() {
-                    var percentVal = '0%';
-                    bar.width(percentVal)
-                    percent.html(percentVal);
-                },
-                uploadProgress: function(event, position, total, percentComplete) {
-                    var percentVal = percentComplete + '%';
-                    bar.width(percentVal)
-                    percent.html(percentVal);
-                },
-                complete: function(xhr) {
-                    alert('File Has Been Uploaded Successfully');
-                }
-            });
-        });
-    });
-</script>
+{{--            $('form').ajaxForm({--}}
+{{--                beforeSend: function() {--}}
+{{--                    var percentVal = '0%';--}}
+{{--                    bar.width(percentVal)--}}
+{{--                    percent.html(percentVal);--}}
+{{--                },--}}
+{{--                uploadProgress: function(event, position, total, percentComplete) {--}}
+{{--                    var percentVal = percentComplete + '%';--}}
+{{--                    bar.width(percentVal)--}}
+{{--                    percent.html(percentVal);--}}
+{{--                },--}}
+{{--                complete: function(xhr) {--}}
+{{--                    alert('File Has Been Uploaded Successfully');--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 </body>
 </html>
