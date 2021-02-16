@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\File;
 class UploadFileController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * Store csv file
+     */
     public function store(Request $request)
     {
         $file = $request['file'];
@@ -26,6 +31,10 @@ class UploadFileController extends Controller
 
     }
 
+    /**
+     * @return false|string
+     * Show all saved files
+     */
     public function files(){
         $paths = Storage::files('public/upload_files/');
         $files = [];

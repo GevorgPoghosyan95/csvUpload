@@ -43,9 +43,5 @@ class UploadCsv implements ShouldQueue
     public function handle()
     {
         Doc::create(['domain' => $this->domain,'file'=>$this->fileName]);
-//        $path = storage_path('app/public/upload_files/' . $this->name);
-//        $rows = Excel::toCollection(new CsvImport(), $path)[0];
-//        $import = new CsvImport();
-//        $import->collection($rows);
     }
 }
