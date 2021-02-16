@@ -8,6 +8,7 @@ To create a project from this repository:
 4.  php artisan key:generate
 5.  php artisan config:cache
 6.  php artisan migrate
+7.  php artisan queue:work
 
 What is included
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",

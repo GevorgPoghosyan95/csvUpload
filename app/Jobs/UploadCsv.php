@@ -42,6 +42,7 @@ class UploadCsv implements ShouldQueue
      */
     public function handle()
     {
+        Doc::where('file',$this->fileName)->delete();
         Doc::create(['domain' => $this->domain,'file'=>$this->fileName]);
     }
 }
