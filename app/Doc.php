@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doc extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ['domain', 'file'];
+    public $timestamps = ['created_at', 'updated_at'];
 }
